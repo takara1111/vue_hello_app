@@ -25,6 +25,7 @@ export default {
   methods: {
     doAction: function() {
       this.message = 'ちわーーーーーーす、' + this.input + 'ぱいせん';
+      this.$emit('result-event', this.input);
     }
   }
 };
