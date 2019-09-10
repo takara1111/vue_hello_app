@@ -8,6 +8,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
+// コンポーネントを出力？
 export default {
   name: 'app',
   components: {
