@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <HelloWorld title="Hello" message="this is a sumple project of Vue.js"/>
+    <HelloWorld v-bind:title="message" />
+    <hr>
+    <button v-on:click="doAction">タイトルへんこー</button>
   </div>
 </template>
 
@@ -12,6 +14,17 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  data: function () {
+    return {
+      message: 'HELLOOOO',
+    };
+  },
+  methods: {
+    doAction:function() {
+      var input = prompt("new title:");
+      this.message = input;
+    }
   }
 }
 </script>
