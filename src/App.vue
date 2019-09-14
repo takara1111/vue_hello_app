@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id='app'>
     <Calc v-bind:title="message" v-on:result-event="appAction" />
     <hr>
     <div><table v-html="log"></table></div>
@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     log:function(){
-      var table = '<tr><th class="head">Expression</th> <th class="head"Value></th></tr>';
+      var table = '<tr><th class="head">Expression</th> <th class="head">Value></th></tr>';
       for (var i in this.result){
         table += '<tr><td>' + this.result[i][0] + '</td><th>'
         + this.result[i][1] + '</th></tr>';

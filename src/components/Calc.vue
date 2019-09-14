@@ -1,52 +1,51 @@
 <template>
-  <div class="hello">
+  <div class='hello'>
     <h1>{{ title }}</h1>
     <p>{{ message }}</p>
-    <hr />
+    <hr>
     <div>
-      <div>
-        <textarea v-model="fomula" cols="40" rows="5"></textarea>
-      </div>
-      <button v-on:click="doAction">CALC</button>
+      <div><textarea v-model="fomula" cols="40" rows="5"></textarea></div>
+      <div><button v-on:click="doAction">CALC</button></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Calc",
+  name: 'Calc',
   props: {
-    title: String
+    title: String,
   },
   data: function() {
     return {
-      message: "Enter expression:",
-      fomula: "0"
+      message: 'Enter expression:',
+      fomula: '0',
     };
   },
   methods: {
     doAction: function() {
-      var arr = this.fomula.trim().split("¥n");
+      // console.log("aaa");
+      var arr = this.fomula.trim().split('\n');
       var last = arr.pop();
-      var fn = "";
+      var fn = '';
       for (var n in arr) {
-        if (arr[n].trim() != "") {
-          fn += "var " + arr[n] + ";";
+        if (arr[n].trim() != '') {
+          fn += 'var ' + arr[n] + ';';
         }
       }
-      fn += "return " + last + ";";
-      var exp = "function f(){" + fn + "} f();";
+      fn += 'return ' + last + ';';
+      var exp = 'function f(){' + fn + '} f();';
       var ans = eval(exp);
-      this.message = "answer: " + ans;
-      var re = arr.join(";").trim();
-      if (re != "") {
-        re += ";";
+      this.message = 'answer: ' + ans;
+      var re = arr.join(';').trim();
+      if (re != '') {
+        re += ';'
       }
       re += last;
-      this.$emit("result-event", re, ans);
+      this.$emit('result-event', re, ans);
     }
   }
-};
+}
 </script>
 
 <style>
