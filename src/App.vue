@@ -1,8 +1,12 @@
 <template>
   <div id='app'>
     <HelloWorld title="slot">
-      <p class="inner">*** this is default text ***</p>
-      <p>aaaaaaaaaa</p>
+      <p class="etc">Begin!</p>
+      <p slot="a" class="inner">***最初のめっせーじ***</p>
+      <p class="etc">Middle!</p>
+      <p slot="b" class="inner">***ふたつめのめっせーじ***</p>
+      <p class="etc">End.</p>
+      <p slot="c" class="inner">***最後のめっせーじ***</p>
     </HelloWorld>
   </div>
 </template>

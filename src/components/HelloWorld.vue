@@ -2,9 +2,15 @@
   <div class="hello">
     <h1>{{ title }}</h1>
     <p>{{ message }}</p>
-    <hr />
+    <hr>
+    <ul>
+      <li><slot name="a" /></li>
+      <li><slot name="b" /></li>
+      <li><slot name="c" /></li>
+    </ul>
+    <hr>
+    <slot />
     <div>
-      <div><slot /></div>
       <input type="text" v-model="input" />
       <button v-on:click="doAction">くりっく</button>
     </div>
