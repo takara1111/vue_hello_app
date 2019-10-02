@@ -4,6 +4,7 @@
     <p>{{ message }}</p>
     <hr />
     <div>
+      <div><slot /></div>
       <input type="text" v-model="input" />
       <button v-on:click="doAction">くりっく</button>
     </div>

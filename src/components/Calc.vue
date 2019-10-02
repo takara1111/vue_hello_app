@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     doAction: function() {
-      // console.log("aaa");
       var arr = this.fomula.trim().split('\n');
       var last = arr.pop();
       var fn = '';
